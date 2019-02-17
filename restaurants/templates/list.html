@@ -4,6 +4,15 @@
 
 {% block content %}
 <br>
+<div class="input-group mb-3">
+  <form action="{% url 'restaurant-list' %}">
+  <input type="text" class="form-control" placeholder="Search" name="q" value="{{request.GET.q}}">
+  <div class="input-group-append">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
+  </div>
+  </form>
+</div>
+<br>
 <div class="row">
     {% for restaurant in restaurants %}
     <div class="col-md-4">
